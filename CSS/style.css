@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+    font-family: "Roboto Slab", serif;
+}
+
+body{
+    background-color: #2d4f8e;
+}
+
+section{
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1500px;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-bottom: #f2cb07;
+    background-color:#2d4f8e;
+}
+
+.header section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.navbar a{
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.navbar a:hover{
+    color: #f2cb07;
+    border-bottom: #f2cb07;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.home-container{
+    background: url(/IMG/fundohome2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.home-container section{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content{
+    max-width: 100rem;
+}
+
+.content h3{
+    color: #fff;
+    font-family: "Dancing Script", cursive;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.content p {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+/* INICIO DO SOBRE NÓS */
+
+.title{
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+.title span{
+    color: #f2cb07;
+}
+
+.sobre .row{
+    display: flex;
+    align-items: center;
+    background-color:#ffd6081f ;
+}
+
+.sobre .row .content{
+    padding: 2rem;
+}
+
+.sobre .row .content h3{
+    font-size: 3rem;
+    color: #fff;
+}
+
+.sobre .row .content p{
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+/* fim sobre nós */
+
+/* ínicio CARDAPIO */
+
+.cardapio .titulosc3{
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+}
+
+#azul{
+    color: #2d4f8e;
+}
+
+.cardapio{
+    background-color: #f2cb07;
+    height: 300vh;
+}
+.cardapio-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; 
+}
+
+.comidas, .bebidas{
+    width: 48%;
+    text-align: center;
+}
+
+.comidas img, .bebidas img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+/* fim dos cardapios e inicio do carrossel */
+
+.container-carrossel{
+    margin-top: 115px;
+}
+
+.carrossel{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc(10 / var(--quantity) * var(--delay)) ;
+}
+
+#mobileBtn{
+    display: none;
+    color: rgb(0, 0, 0);
+}
+#mobileMenu{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes autoRun{
+    from {
+        left: 100%;
+    }
+    
+    to{
+        left: -50px;
+    }
+}
+    @media screen and (max-width:768px){
+        .navbar, .navbar .btn{
+            display: none;
+        }
+    
+        /* exibir o menu mobile */
+        #mobileBtn{
+            display: block;
+            border: none;
+            background-color: transparent;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+    /* Ajusta o header para empilhar itens e centralizar o menu */
+    .header section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1rem 0;
+        font-size: 1.6rem;
+    }
+
+    /* Ajusta o conteúdo da home para melhor visualização em telas menores */
+    .content h3 {
+        font-size: 2.8rem;
+        padding: 0 1rem;
+    }
+
+    .content p {
+        font-size: 1.4rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Sobre nós: Coluna ao invés de linha */
+    .sobre .row {
+        flex-direction: column;
+    }
+
+    .sobre .row .content h3 {
+        font-size: 2.4rem;
+        text-align: center;
+    }
+
+    .sobre .row .content p {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    /* Cardápio: Colunas viram blocos empilhados */
+    .cardapio-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comidas, .bebidas {
+        width: 90%;
+    }
+
+    .cardapio {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
+    /* Carrossel: Reduz tamanho dos itens para caber melhor */
+    .item {
+        --width: 150px;
+        --height: 150px;
+    }
+
+    .container-carrossel {
+        margin-top: 50px;
+    }
+
+    .carrossel {
+        overflow-x: auto;
+        display: block;
+        white-space: nowrap;
+    }
+
+    .item {
+        position: static;
+        display: inline-block;
+        animation: none;
+        margin: 0 10px;
+    }
+
+
+@media(min-width: 1080px){
+    #imgLogo{
+        height: 6rem;
+    }
+    #section-teste{
+        min-height: 100px;
+    }
+    }
+}

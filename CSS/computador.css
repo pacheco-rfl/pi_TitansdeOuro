@@ -1,0 +1,543 @@
+:root {
+    --cheddar: #F5A91F;
+    --azul: #2d4f8e;
+    --verm: #d61e1e;
+    --transparent: #ffd6081f;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Share+Tech&display=swap');
+
+* {
+    /*se quiser colocar alguma borda ou tirar essa transição do site, mexe aqui*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+    font-family: "Roboto Slab", serif;
+}
+
+body {
+    background-color: var(--azul);
+}
+
+section {
+    /*todas as seções que vc criar vai ter essa predefinição, não mexe pq vai mudar a estrutura do site toda, se quiser cria um id ou class pra mexer em sections especificas*/
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1000px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2) inset, 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--cheddar);
+    height: 6vh;
+}
+
+.logo-container {
+    margin-left: 12%;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 0.4rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--cheddar);
+    width: 100vw;
+    height: 6vh;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: fixed;
+    z-index: 1000;
+}
+
+nav a {
+    color: #2d4f8e;
+}
+
+nav a:hover {
+    color: #fff;
+    border-bottom: var(--cheddar);
+    font-size: 1.04rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 12%;
+    font-weight: bold;
+}
+
+/*  */
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+}
+
+/* fim nav */
+/* inicio home */
+.home-container {
+    background: url(/IMG/fundohome1.webp);
+    background-position: center;
+    background-size: cover;
+}
+
+.home-container section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 100rem;
+}
+
+.content p {
+    color: #fff;
+    font-family: "Share Tech", sans-serif;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    padding: 7rem 0;
+    z-index: 99;
+}
+
+/* fim da seção nav e home */
+/* INICIO DO SOBRE NÓS */
+
+.sobre {
+    background-color: var(--transparent);
+    height: 115vh;
+}
+
+.title {
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: var(--cheddar);
+}
+
+.title span {
+    color: var(--cheddar);
+}
+
+.sobre h3 {
+    margin-top: 4rem;
+}
+
+.sobre .row {
+    display: flex;
+    align-items: center;
+    height: 80vh;
+}
+
+.sobre .row img {
+    width: 180vw;
+    height: 70vh;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+}
+
+.sobre .row .content {
+    padding: 3rem;
+    text-align: center;
+}
+
+.sobre .row .content h2 {
+    color: var(--cheddar);
+}
+
+.sobre .row .content h3 {
+    font-size: 3rem;
+    color: var(--cheddar);
+}
+
+.sobre .row .content p {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+/* fim sobre nós */
+
+/* inicio dos cardapios e do carrossel */
+
+.cardapio .titleazul {
+    font-size: 4rem;
+    color: var(--azul);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 4rem;
+    margin-bottom: 7rem;
+}
+
+.azul {
+    color: #2d4f8e;
+}
+
+.cardapio {
+    background-color: var(--cheddar);
+    height: 135vh;
+}
+
+.carrossel-container {
+    max-width: 920px;
+    margin: auto;
+    overflow: visible;
+    position: relative;
+}
+
+.carrossel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card {
+    flex: 0 0 300px;
+    margin: 0 10px;
+    background: var(--azul);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    transform: scale(0.9);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    color: var(--cheddar);
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.card.destaque {
+    transform: scale(1.1);
+    height: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 18px;
+    opacity: 1;
+}
+
+.controles {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.controles button {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    pointer-events: all;
+    /* ativa clique nos botões */
+}
+
+/* fim do cardapio e carrossel */
+/* inicio do botão do cardapio digital */
+.cardapiobtn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+
+.cardapiodigital {
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #fe0000;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    border-radius: 25px;
+}
+
+.cardapiodigital:hover {
+    background-color: var(--azul);
+    color: var(--cheddar);
+}
+
+.cardapiobtn a {
+    width: 105px;
+}
+
+/* fim do botão do cardapio digital */
+/* inicio da seção nosso Restaurante*/
+
+.restaurante {
+    background-color: var(--transparent);
+    height: 120vh;
+}
+
+.restaurante h2 {
+    margin-top: 2rem;
+}
+
+.restaurante .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 1.5rem;
+}
+
+.restaurante .box-container .box {
+    text-align: center;
+    margin-top: 5rem;
+    padding-top: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.restaurante .box-container .box:hover {
+    background-color: var(--cheddar);
+}
+
+.restaurante .box-container .box img {
+    border-radius: 10px;
+}
+
+.restaurante .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+/* fim da seção nosso Restaurante*/
+/* inicio da seção Saiba Mais */
+
+.saiba-mais {
+  background-color: var(--cheddar);
+  padding: 4rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+
+}
+
+.titleazul {
+  font-size: 4rem;
+  color: var(--azul);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.imagem {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.imagem img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.linha-textos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#como-comecou, #mudança , #porque{
+  background-color: var(--azul);
+  color: var(--cheddar);
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 300px;
+  flex: 1 1 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#como-comecou p, #mudança p, #porque p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* fim da seção saiba mais */
+/* inicio da seção localização */
+.localizacao {
+    height: 100vh;
+    background-color: var(--transparent);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+iframe {
+    width: 40vw;
+    height: 60vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2) inset, 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* fim da seção localização */
+/* inicio da seção Promoções */
+.promocoes{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.promocoes span{
+    color: var(--cheddar);
+}
+
+.promocoes #campos{
+    padding-bottom: 0.2rem;
+    font-size: 1rem;
+    color: var(--cheddar);
+}
+
+.promocoes p {
+    padding-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--cheddar);
+}
+
+input::placeholder{
+    color: black;
+    opacity: 0.4;  
+}
+
+h4{
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.form{
+    width: 100%;
+    max-width: 32rem;
+    font-size: 1.125rem;
+
+}
+
+.form label,
+.form input,
+.form textarea,
+.form button{
+    display: block;
+    width: 100%;
+}
+
+.form label{
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.form input,
+.form textarea
+.form button{
+    font: inherit;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    transition: border-color, box-shadow 0.2s;
+}
+
+.form textarea{
+    min-height: 13rem;
+    resize: vertical;
+}
+
+.form input:hover,
+.form input:focus,
+.form textarea:hover,
+.form textarea:focus{
+    outline: none;
+    border-color: var(--cheddar);
+    box-shadow: 0 0 0 1px var(--cheddar);
+}
+
+.form button{
+    display: block;
+    padding: 1rem;
+    background: var(--verm);
+    color: #fff;
+    font: inherit;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.form button:hover,
+.form button:focus{
+    outline: none;
+    background: var(--cheddar);
+    color: #2d4f8e;
+}
+
