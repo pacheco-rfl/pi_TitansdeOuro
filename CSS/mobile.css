@@ -83,6 +83,10 @@
     padding: 0.5rem 1rem;
   }
 /* seção sobre nós */
+  .sobre-container{
+    height: 200vh;
+  }
+
   .sobre .row img {
     width: 60vw;
     height: 90vh;
@@ -104,8 +108,17 @@
   }
 
   .sobre {
-    height: 180vh;
+    padding: 2rem 1rem;
   }
+
+
+  .sobre-container,
+.sobre {
+  min-height: auto;
+  height: 240vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
 
 /* fim da seção sobre nós */
   /* comeco seção dos melhores pratos  */
@@ -114,6 +127,7 @@
     background-color: var(--cheddar);
     height: auto;
     padding: 2rem 1rem;
+    
     overflow: hidden;
   }
 
@@ -255,7 +269,14 @@
     margin: 0;
     padding: 0;
   }
+
+  .promocoes{
+    height: 120vh;
+    padding-top: 7rem;
+  }
+
 }
+
 
 /* fim da seção footer */
 @keyframes animacaonavbtn {

@@ -28,14 +28,14 @@ function atualizarCarrossel() {
   cards.forEach((card, index) => {
     card.classList.remove('destaque');
 
-    // oculta cards muito fora da área visível
-    if (index < currentIndex - 2 || index > currentIndex + 2) {
-      card.style.opacity = '0';
-      card.style.pointerEvents = 'none';
-    } else {
-      card.style.opacity = '1';
-      card.style.pointerEvents = 'auto';
-    }
+    // // oculta cards muito fora da área visível
+    // if (index < currentIndex - 2 || index > currentIndex + 2) {
+    //   card.style.opacity = '0';
+    //   card.style.pointerEvents = 'none';
+    // } else {
+    //   card.style.opacity = '1';
+    //   card.style.pointerEvents = 'auto';
+    // }
   });
 
   if (cards[currentIndex]) {
@@ -51,7 +51,7 @@ function iniciarAutoPlay() {
   intervalo = setInterval(() => {
     currentIndex = (currentIndex + 1) % cards.length;
     atualizarCarrossel();
-  }, 400000);
+  }, 4000000);
 }
 
 function pararAutoPlay() {
