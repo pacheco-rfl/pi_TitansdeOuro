@@ -14,8 +14,8 @@
   }
 
   .logo {
-    width: 9vw;
-    height: 14vh;
+    width: 12vw;
+    height: 12vh;
   }
 
   img.logo {
@@ -82,10 +82,10 @@
     font-size: 1.4rem;
     padding: 0.5rem 1rem;
   }
-
+/* seção sobre nós */
   .sobre .row img {
-    width: 704px;
-    height: 352px;
+    width: 60vw;
+    height: 90vh;
   }
 
   .sobre .row {
@@ -103,10 +103,11 @@
     text-align: center;
   }
 
-  .sobre{
-    height: 170vh;
+  .sobre {
+    height: 180vh;
   }
-  
+
+/* fim da seção sobre nós */
   /* comeco seção dos melhores pratos  */
 
   .cardapio {
@@ -124,30 +125,26 @@
 
   .carrossel-container {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 50px 0 0 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .carrossel-wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
-    max-width: 500px;
-
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem 0;
+    width: max-content;
   }
 
   .card {
-    width: 90%;
+    flex: 0 0 auto;
+    width: 240px;
     background: var(--azul);
     border-radius: 10px;
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
-    opacity: 1;
-    transform: none;
   }
 
   .card img {
@@ -172,6 +169,7 @@
     transform: none;
     height: auto;
     box-shadow: none;
+    width: 60vw;
   }
 
   .controles {
@@ -208,21 +206,26 @@
     background-color: var(--azul);
   }
 
-  .restaurante .box-container .box img {
+  .restaurante .box-container .box:hover {
+    border-radius: 10px;
     width: 100%;
-    height: auto;
+  }
+
+  .restaurante .box-container .box img {
+    width: 70vw;
+    height: 50vh;
     border-radius: 10px;
   }
 
   .restaurante .box-container .box h3 {
     font-size: 1.4rem;
-    color: var(--cheddar);
+    color: var(--azul);
     margin-top: 0.5rem;
   }
 
   .restaurante .box-container .box h3:hover {
     color: var(--azul);
-
+    z-index: 999;
   }
 
   /* fim seção nosso restaurante */
@@ -232,8 +235,29 @@
   #porque {
     max-height: auto;
   }
+
+  .localizacao-container {
+    width: 80vw;
+    margin: auto;
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  /*começo da seção footer */
+  #footer_content {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .logo-container .logo {
+    margin: 0;
+    padding: 0;
+  }
 }
 
+/* fim da seção footer */
 @keyframes animacaonavbtn {
   from {
     opacity: 0;

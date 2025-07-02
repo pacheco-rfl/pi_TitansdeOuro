@@ -2,46 +2,41 @@
 const wrapper = document.querySelector('.carrossel-wrapper');
 const cards = document.querySelectorAll('.card');
 
-// Começa no card do meio
-let currentIndex = Math.floor(cards.length / 2);
+let currentIndex = 0;
 
 const avancar = document.getElementById('avancar');
 const voltar = document.getElementById('voltar');
 
-//quando avançar é clicado, verifica se ele vai ou não pro proximo card
 avancar.addEventListener('click', function () {
-  if (currentIndex < cards.length - 1) {
-    currentIndex = currentIndex + 1; //vai pro próximo
-  } else {
-    currentIndex = cards.length - 1; //vai pro ultimo
-  }
-  atualizarCarrossel(); //atualiza e destaca
-});
-
-//quando voltar é clicado, aqui ta verificando se ele ta no card anterior ou no primeiro
-voltar.addEventListener('click', function () {
-  if (currentIndex > 0) {
-    currentIndex = currentIndex - 1;
-  } else {
-    currentIndex = 0;
-  }
+  currentIndex = (currentIndex + 1) % cards.length; // loop para o início
   atualizarCarrossel();
 });
-//move o carrossel e aplica o destaque para o card atual
+
+voltar.addEventListener('click', function () {
+  currentIndex = (currentIndex - 1 + cards.length) % cards.length; // loop para o final
+  atualizarCarrossel();
+});
+
 function atualizarCarrossel() {
-  const cardWidth = cards[0].offsetWidth + 20;
+  const cardWidth = cards[0].offsetWidth + 20; // largura + margem
+  const wrapperWidth = wrapper.parentElement.offsetWidth;
 
-  // Se for o terceiro card não move o carrossel, só destaca
-  if (currentIndex === 2) {
-    // wrapper.style.transform = 'translateX(0)'; comentei isso pq ele estava fazendo uma pequena animacao pro lado
-  } else {
-    const offset = cardWidth * currentIndex - (wrapper.parentElement.offsetWidth - cardWidth) / 2;
-    wrapper.style.transform = 'translateX(-' + offset + 'px)';
-  }
+  // Cálculo do deslocamento para centralizar o card atual
+  const offset = Math.max(0, cardWidth * currentIndex - (wrapperWidth - cardWidth) / 2);
+  wrapper.style.transform = 'translateX(-' + offset + 'px)';
 
-  for (let i = 0; i < cards.length; i++) {
-    cards[i].classList.remove('destaque');
-  }
+  cards.forEach((card, index) => {
+    card.classList.remove('destaque');
+
+    // oculta cards muito fora da área visível
+    if (index < currentIndex - 2 || index > currentIndex + 2) {
+      card.style.opacity = '0';
+      card.style.pointerEvents = 'none';
+    } else {
+      card.style.opacity = '1';
+      card.style.pointerEvents = 'auto';
+    }
+  });
 
   if (cards[currentIndex]) {
     cards[currentIndex].classList.add('destaque');
@@ -49,8 +44,31 @@ function atualizarCarrossel() {
 }
 
 atualizarCarrossel();
-//fim do script de carrossel
-//tentativa de script para aparecer um alerta quando enviar o e-mail
+
+let intervalo;
+
+function iniciarAutoPlay() {
+  intervalo = setInterval(() => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    atualizarCarrossel();
+  }, 400000);
+}
+
+function pararAutoPlay() {
+  clearInterval(intervalo);
+}
+
+// Começa o autoplay ao carregar
+iniciarAutoPlay();
+
+// Para o autoplay ao passar o mouse
+wrapper.addEventListener('mouseenter', pararAutoPlay);
+
+// Retoma o autoplay ao tirar o mouse
+wrapper.addEventListener('mouseleave', iniciarAutoPlay);
+
+
+
 
 function enviarFormulario(){
   const Data = document.getElementById('data');
