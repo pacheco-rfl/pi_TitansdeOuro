@@ -69,12 +69,17 @@ wrapper.addEventListener('mouseleave', iniciarAutoPlay);
 
 
 
+//if else para se a pessoa tentar enviar o formulario sem preencher
+  function enviarFormulario() {
+    const nome = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const data = document.getElementById("data").value;
 
-function enviarFormulario(){
-  const Data = document.getElementById('data');
-  if (Data.length === 9){
-    alert('Preencha corretamente os dados.')
-  }else{
-    alert('Enviado com sucesso')
+    if (nome === "" || email === "" || data === "") {
+      alert(" Preencha corretamente todos os dados obrigatórios.");
+      return false;
+    } else {
+      alert(" Enviado com sucesso!");
+      return true;
+    }
   }
-} 

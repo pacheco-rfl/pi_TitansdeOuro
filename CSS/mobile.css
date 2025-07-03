@@ -1,7 +1,6 @@
 :root {
   --cheddar: #F5A91F;
   --azul: #2d4f8e;
-
 }
 
 @media (max-width: 768px) {
@@ -16,11 +15,6 @@
   .logo {
     width: 12vw;
     height: 12vh;
-  }
-
-  img.logo {
-    margin: 0 0 0 4rem;
-    padding: 0 0 0.5rem 0;
   }
 
   nav {
@@ -88,7 +82,7 @@
   }
 
   .sobre .row img {
-    width: 60vw;
+    width: 80vw;
     height: 90vh;
   }
 
@@ -127,7 +121,6 @@
     background-color: var(--cheddar);
     height: auto;
     padding: 2rem 1rem;
-    
     overflow: hidden;
   }
 
@@ -152,13 +145,11 @@
   }
 
   .card {
-    flex: 0 0 auto;
-    width: 240px;
-    background: var(--azul);
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
+    transform: none;
+    height: auto;
+    box-shadow: none;
+    width: 60vw;
+    opacity: 1;
   }
 
   .card img {
@@ -168,6 +159,13 @@
     object-fit: cover;
   }
 
+  .card.destaque {
+    transform: none;
+    height: auto;
+    box-shadow: none;
+    width: 60vw;
+  }
+  
   .card h3 {
     margin: 10px 0 5px;
     font-size: 1.4rem;
@@ -177,14 +175,7 @@
   .card p {
     font-size: 1.1rem;
     color: #fff;
-  }
-
-  .card.destaque {
-    transform: none;
-    height: auto;
-    box-shadow: none;
-    width: 60vw;
-  }
+  }  
 
   .controles {
     display: none;
@@ -265,16 +256,17 @@
     gap: 2rem;
   }
 
-  .logo-container .logo {
+#footer_contacts  .logo-container .logo {
     margin: 0;
     padding: 0;
+    width: 20vw;
+    height: 20vh;
   }
 
   .promocoes{
     height: 120vh;
     padding-top: 7rem;
   }
-
 }
 
 

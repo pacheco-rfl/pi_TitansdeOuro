@@ -66,7 +66,7 @@ nav {
 }
 
 nav a {
-    color: #2d4f8e;
+    color: var(--azul);
 }
 
 nav a:hover {
@@ -100,13 +100,13 @@ nav a:hover {
 /* fim nav */
 /* inicio home */
 
-#home{
+#home {
     margin: 0;
     padding: 0;
 }
 
 .home-container {
-    background-image: url(/IMG/home.jpg);
+    background-image: url('https://pacheco-rfl.github.io/pi_TitansdeOuro/IMG/home.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -124,7 +124,7 @@ nav a:hover {
 
 .content-home p {
     color: #fff;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     font-family: "Roboto Slab", serif;
     font-size: 1.8rem;
     line-height: 1.6;
@@ -132,7 +132,7 @@ nav a:hover {
     margin-right: rem;
     z-index: 99;
     font-weight: bold;
-    
+
 
 }
 
@@ -195,7 +195,7 @@ nav a:hover {
 .sobre .row .content p {
     font-size: 1.6rem;
     color: #fff;
-    
+
     line-height: 2;
 }
 
@@ -284,6 +284,7 @@ nav a:hover {
 
 .controles button {
     background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 10rem;
     border: none;
     color: white;
     font-size: 2rem;
@@ -373,6 +374,10 @@ nav a:hover {
     color: #fff;
     font-size: 2rem;
     padding: 1rem 0;
+}
+
+.restaurante .box-container .box h3:hover {
+    color: var(--azul);
 }
 
 /* fim da seção nosso Restaurante*/
@@ -563,17 +568,19 @@ h4 {
     background: var(--azul);
     color: var(--cheddar);
 }
+
 /* fim da seção contato */
 /* inicio do footer */
-footer{
+footer {
     width: 100%;
     color: var(--azul);
 }
-.footer_link{
+
+.footer_link {
     text-decoration: none;
 }
 
-#footer_content .logo-container{
+#footer_content .logo-container {
     margin: 0;
     display: flex;
     align-items: center;
@@ -583,28 +590,28 @@ footer{
     transition: all .4s;
 }
 
-#footer_content .logo-container .logo{
+#footer_content .logo-container .logo {
     width: 8vw;
     height: 15vh;
 }
 
-#footer_content{
-    background-color: #000;
+#footer_content {
+    background-color: #fff;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 3rem 3.5rem;
-    color: #ffffff;
+    color: var(--azul);
 }
 
 #footer_contacts p {
     text-align: center;
 }
 
-#footer_contacts h1{
+#footer_contacts h1 {
     margin-bottom: 0.75rem;
 }
 
-#footer_social_media{
+#footer_social_media {
     display: flex;
     gap: 2rem;
     margin-top: 1.5rem;
@@ -612,38 +619,38 @@ footer{
     justify-content: center;
 }
 
-#footer_social_media p{
+#footer_social_media p {
     text-align: center;
 }
 
-#footer_social_media .footer_link{
+#footer_social_media .footer_link {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 2.5rem;
     width: 2.5rem;
-    color: #ffffff;
+    color: #fff;
     border-radius: 50%;
     transition: all .4s;
 }
 
-#footer_social_media .footer_link i{
+#footer_social_media .footer_link i {
     font-size: 1.25rem;
 }
 
-#footer_social_media .footer_link:hover{
+#footer_social_media .footer_link:hover {
     opacity: 0.8s;
 }
 
-#instagram{
+#instagram {
     background: linear-gradient(#7f37c9, #ff2992, #ff9807);
 }
 
-#whatsapp{
+#whatsapp {
     background-color: #25d366;
 }
 
-#telefone{
+#telefone {
     background-color: var(--azul);
 }
 
@@ -654,34 +661,39 @@ footer{
     list-style: none;
 }
 
-.footer-list .footer_link:hover{
+.footer-list .footer_link:hover {
     color: var(--cheddar);
     opacity: 0.8;
 }
 
-#footer_copyright{
-    background-color: #000;
-    color: #ffffff;
+#footer_copyright {
+    background-color: #fff;
+    color: var(--azul);
     display: flex;
     justify-content: center;
     font-size: 0.9rem;
     padding: 1.5rem;
-    font-weight: 100;
+    font-weight: 400;
     grid-column: 3/4;
 }
 
-#footer_copyright{
+#footer_copyright {
     grid-column: 3/4;
 }
 
-#footer-contatos-sem-link{
+#footer-contatos-sem-link {
     display: flex;
     flex-direction: column;
     font-size: 1rem;
     gap: 0.2rem;
 }
 
-.footer-sem-link{
+.footer-sem-link {
     text-align: center;
     margin: auto;
+}
+
+.footer-sem-link:hover {
+    font-size: 1.04rem;
+    color: var(--cheddar);
 }
